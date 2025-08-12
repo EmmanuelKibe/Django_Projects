@@ -13,3 +13,7 @@ def index(request):
         return HttpResponse(f"Car: {car.model}, Year: {car.year}, Price: {car.price}")
     except Cars.DoesNotExist:
         return HttpResponse("Car not found", status=404) """
+
+def home_view(request):
+    context = {'name': 'Kibe'}  # Data to pass into the template
+    return render(request, 'home.html', context)
